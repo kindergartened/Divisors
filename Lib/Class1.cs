@@ -15,7 +15,23 @@
         /// <returns></returns>
         static List<int> PrimeInRange(int n, int m)
         {
-            return new List<int>();
+            List<int> result = new();
+            for (int number = n; number <= m; number++)
+            {
+                if (number > 1)
+                {
+                    bool flag = true;
+                    for (int i = 2; i <= Math.Sqrt(number); i++)
+                        if ((number % i) == 0)
+                        {
+                            flag = false;
+                            break;
+                        }
+                    if (flag)
+                        result.Add(number);
+                }
+            }
+            return result;
         }
         /// <summary>
         /// Лист делителей числа
