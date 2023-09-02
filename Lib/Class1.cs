@@ -2,6 +2,30 @@
 {
     public class Class1
     {
+        static (List<int>, List<int>) Factorization(int num)
+        {
+            List<int> result = new();
+            return (result, result);
+        }
+        /// <summary>
+        /// Возвращает лист простых чисел в диапазоне 
+        /// </summary>
+        /// <param name="n">Начальное число</param>
+        /// <param name="m">Конечное число</param>
+        /// <returns></returns>
+        static List<int> PrimeInRange(int n, int m)
+        {
+            return new List<int>();
+        }
+        /// <summary>
+        /// Лист делителей числа
+        /// </summary>
+        /// <param name="num">Число</param>
+        /// <returns>Лист целых чисел</returns>
+        static List<int> AllDivisors(int num)
+        {
+            return new List<int>();
+        }
         /// <summary>
         /// Проверяет, является ли число простым
         /// </summary>
@@ -11,6 +35,13 @@
         {
             return false;
         }
+
+        // Задание с занятия
+        //
+        // |
+        // |
+        // v
+
         /// <summary>
         /// Метод, возвращающий лист чисел, имеющих ровно 3 делителя за исключением 1 и самого себя.
         /// </summary>
