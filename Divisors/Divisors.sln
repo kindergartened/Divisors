@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Divisors", "Divisors.csproj", "{70265912-B064-492B-B3C6-8A8444C7D2B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib", "..\Lib\Lib.csproj", "{7214C3DA-2834-4146-BADC-37F569C0BCC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70265912-B064-492B-B3C6-8A8444C7D2B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70265912-B064-492B-B3C6-8A8444C7D2B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70265912-B064-492B-B3C6-8A8444C7D2B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70265912-B064-492B-B3C6-8A8444C7D2B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7214C3DA-2834-4146-BADC-37F569C0BCC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7214C3DA-2834-4146-BADC-37F569C0BCC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7214C3DA-2834-4146-BADC-37F569C0BCC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7214C3DA-2834-4146-BADC-37F569C0BCC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31B102F2-D6E1-43C6-A203-57DC9D1E699F}
+	EndGlobalSection
+EndGlobal
