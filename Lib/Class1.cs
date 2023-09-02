@@ -2,7 +2,15 @@
 {
     public class Class1
     {
-
+        /// <summary>
+        /// Проверяет, является ли число простым
+        /// </summary>
+        /// <param name="num">Число</param>
+        /// <returns>true/false</returns>
+        static bool IsPrime(int num)
+        {
+            return false;
+        }
         /// <summary>
         /// Метод, возвращающий лист чисел, имеющих ровно 3 делителя за исключением 1 и самого себя.
         /// </summary>
