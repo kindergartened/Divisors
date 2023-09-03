@@ -1,11 +1,37 @@
-﻿namespace Lib
+﻿using System.Net.Http.Headers;
+
+namespace Lib
 {
     public class Class1
     {
         static (List<int>, List<int>) Factorization(int num)
         {
-            List<int> result = new();
-            return (result, result);
+            List<int> primes = new();
+            int temp = 1;
+            List<int> factors = new();
+
+            for (int i = 2; i <= Math.Sqrt(num); i++)
+            {
+                while (num % i == 0)
+                {
+                    primes.Add(i);
+                    num /= i;
+                }
+            }
+            primes.Sort();
+            for (int i = 1; i < primes.Count; i++)
+            {
+                if (primes[i] == primes[i-1])
+                {
+                    temp++; 
+                }
+                else
+                {
+                    factors.Add(temp);
+                    temp = 1;
+                }
+            }
+            return (primes.Distinct().ToList(), factors);
         }
         /// <summary>
         /// Возвращает лист простых чисел в диапазоне 
