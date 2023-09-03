@@ -4,7 +4,7 @@ namespace Lib
 {
     public class Class1
     {
-        static (List<int>, List<int>) Factorization(int num)
+        public static (List<int>, List<int>) Factorization(int num)
         {
             List<int> primes = new();
             int temp = 1;
@@ -39,12 +39,12 @@ namespace Lib
         /// <param name="n">Начальное число</param>
         /// <param name="m">Конечное число</param>
         /// <returns></returns>
-        static List<int> PrimeInRange(int n, int m)
+        public static List<int> PrimeInRange(int n, int m)
         {
             List<int> result = new();
             for (int number = n; number <= m; number++)
             {
-                if (IsPrime(i))
+                if (IsPrime(number))
                 {
                     result.Add(number);
                 }
@@ -57,7 +57,7 @@ namespace Lib
         /// <param name="d">Целое число</param>
         /// <param name="n">Целое число</param>
         /// <returns>True или False</returns>
-        static bool IsDivisor(int d, int n)
+        public static bool IsDivisor(int d, int n)
         {
             return (n % d == 0);
         }
@@ -66,7 +66,7 @@ namespace Lib
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>Лист целых чисел</returns>
-        static List<int> AllDivisors(int num)
+        public static List<int> AllDivisors(int num)
         {
             List<int> result = new();
             for (int i = 1; i <= Math.Sqrt(num); i++)
@@ -85,11 +85,11 @@ namespace Lib
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>true/false</returns>
-        static bool IsPrime(int num)
+        public static bool IsPrime(int num)
         {
-            for (int i = 2; i < number; i++)
+            for (int i = 2; i < num; i++)
             {
-                if (number % i == 0)
+                if (num % i == 0)
                     return false;
             }
             return true;
