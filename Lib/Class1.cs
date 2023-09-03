@@ -4,13 +4,18 @@ namespace Lib
 {
     public class Class1
     {
-        static (List<int>, List<int>) Factorization(int num)
+        /// <summary>
+        /// Разбивает число на его простые множители
+        /// </summary>
+        /// <param name="num">Разбиваемое число</param>
+        /// <returns>Два листа с целыми числами</returns>
+        public static (List<int>, List<int>) Factorization(int num)
         {
             List<int> primes = new();
-            int temp = 1;
+            int temp = 0;
             List<int> factors = new();
 
-            for (int i = 2; i <= Math.Sqrt(num); i++)
+            for (int i = 2; i <= num; i++)
             {
                 while (num % i == 0)
                 {
@@ -19,16 +24,17 @@ namespace Lib
                 }
             }
             primes.Sort();
-            for (int i = 1; i < primes.Count; i++)
+            factors.Add(1);
+            for (int i = 0; i < primes.Count-1; i++)
             {
-                if (primes[i] == primes[i-1])
+                if (primes[i] == primes[i+1])
                 {
-                    temp++; 
+                    factors[temp]++;
                 }
                 else
                 {
-                    factors.Add(temp);
-                    temp = 1;
+                    temp++;
+                    factors.Add(1);
                 }
             }
             return (primes.Distinct().ToList(), factors);
@@ -74,7 +80,7 @@ namespace Lib
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>Лист целых чисел</returns>
-        static List<int> AllDivisors(int num)
+        public static List<int> AllDivisors(int num)
         {
             List<int> result = new();
             for (int i = 1; i <= Math.Sqrt(num); i++)
@@ -107,12 +113,20 @@ namespace Lib
         /// <summary>
         /// Метод, возвращающий лист чисел, имеющих ровно 3 делителя за исключением 1 и самого себя.
         /// </summary>
-        /// <param name="start">Начальное число</param>
-        /// <param name="finish">Конечное число</param>
-        /// <returns>Лист с числами</returns>
-        static List<int> GetNumsWith3Divisors(int start, int finish)
+        /// <param name="start">Начало диапозона</param>
+        /// <param name="finish">Конец диапозона</param>
+        /// <returns>Лист целых чисел</returns>
+        public static List<int> GetNumsWith3Divisors(int start, int finish)
         {
-            return new List<int>();
+            List<int> result = new();
+            for (int i = start; i <= finish; i++)
+            {
+                if (AllDivisors(i).Count() == 5)
+                {
+                    result.Add(i);
+                }
+            }
+            return result;
         }
     }
 }
