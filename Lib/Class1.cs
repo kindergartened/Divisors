@@ -44,17 +44,9 @@ namespace Lib
             List<int> result = new();
             for (int number = n; number <= m; number++)
             {
-                if (number > 1)
+                if (IsPrime(i))
                 {
-                    bool flag = true;
-                    for (int i = 2; i <= Math.Sqrt(number); i++)
-                        if ((number % i) == 0)
-                        {
-                            flag = false;
-                            break;
-                        }
-                    if (flag)
-                        result.Add(number);
+                    result.Add(number);
                 }
             }
             return result;
@@ -95,7 +87,12 @@ namespace Lib
         /// <returns>true/false</returns>
         static bool IsPrime(int num)
         {
-            return false;
+            for (int i = 2; i < number; i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+            return true;
         }
 
         // Задание с занятия
