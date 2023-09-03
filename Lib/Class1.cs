@@ -34,13 +34,33 @@
             return result;
         }
         /// <summary>
+        /// Является ли число d делителем числа n
+        /// </summary>
+        /// <param name="d">Целое число</param>
+        /// <param name="n">Целое число</param>
+        /// <returns>True или False</returns>
+        static bool IsDivisor(int d, int n)
+        {
+            return (n % d == 0);
+        }
+        /// <summary>
         /// Лист делителей числа
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>Лист целых чисел</returns>
         static List<int> AllDivisors(int num)
         {
-            return new List<int>();
+            List<int> result = new();
+            for (int i = 1; i <= Math.Sqrt(num); i++)
+            {
+                if (IsDivisor(i, num))
+                { 
+                    result.Add(i);
+                    if (num / i != i)
+                        result.Add(num / i);
+                }
+            }
+            return result;
         }
         /// <summary>
         /// Проверяет, является ли число простым
