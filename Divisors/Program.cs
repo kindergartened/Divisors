@@ -1,4 +1,5 @@
-using Lib;
+using static Lib.Class1;
+
 namespace Divisors
 {
     internal static class Program
@@ -12,8 +13,8 @@ namespace Divisors
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            //ApplicationConfiguration.Initialize();
-            //Application.Run(new Form1());
+            ApplicationConfiguration.Initialize();
+            Application.Run(new Form1());
         }
     }
 }

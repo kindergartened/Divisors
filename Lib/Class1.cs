@@ -45,22 +45,14 @@ namespace Lib
         /// <param name="n">Начальное число</param>
         /// <param name="m">Конечное число</param>
         /// <returns></returns>
-        static List<int> PrimeInRange(int n, int m)
+        public static List<int> PrimeInRange(int n, int m)
         {
             List<int> result = new();
             for (int number = n; number <= m; number++)
             {
-                if (number > 1)
+                if (IsPrime(number))
                 {
-                    bool flag = true;
-                    for (int i = 2; i <= Math.Sqrt(number); i++)
-                        if ((number % i) == 0)
-                        {
-                            flag = false;
-                            break;
-                        }
-                    if (flag)
-                        result.Add(number);
+                    result.Add(number);
                 }
             }
             return result;
@@ -71,7 +63,7 @@ namespace Lib
         /// <param name="d">Целое число</param>
         /// <param name="n">Целое число</param>
         /// <returns>True или False</returns>
-        static bool IsDivisor(int d, int n)
+        public static bool IsDivisor(long d, long n)
         {
             return (n % d == 0);
         }
@@ -80,9 +72,9 @@ namespace Lib
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>Лист целых чисел</returns>
-        public static List<int> AllDivisors(int num)
+        public static List<long> AllDivisors(long num)
         {
-            List<int> result = new();
+            List<long> result = new();
             for (int i = 1; i <= Math.Sqrt(num); i++)
             {
                 if (IsDivisor(i, num))
@@ -92,6 +84,19 @@ namespace Lib
                         result.Add(num / i);
                 }
             }
+            int count = result.Count;
+            for (int i = 0; i < count; i++)
+            {
+                long divisor = result[i];
+                if (divisor != 0 && num % divisor == 0)
+                {
+                    long negativeDivisor = -divisor;
+                    if (!result.Contains(negativeDivisor))
+                    {
+                        result.Add(negativeDivisor);
+                    }
+                }
+            }
             return result;
         }
         /// <summary>
@@ -99,9 +104,14 @@ namespace Lib
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>true/false</returns>
-        static bool IsPrime(int num)
+        public static bool IsPrime(int num)
         {
-            return false;
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
         }
 
         // Задание с занятия
