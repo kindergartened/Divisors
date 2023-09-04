@@ -57,7 +57,7 @@ namespace Lib
         /// <param name="d">Целое число</param>
         /// <param name="n">Целое число</param>
         /// <returns>True или False</returns>
-        public static bool IsDivisor(int d, int n)
+        public static bool IsDivisor(long d, long n)
         {
             return (n % d == 0);
         }
@@ -66,9 +66,9 @@ namespace Lib
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>Лист целых чисел</returns>
-        public static List<int> AllDivisors(int num)
+        public static List<long> AllDivisors(long num)
         {
-            List<int> result = new();
+            List<long> result = new();
             for (int i = 1; i <= Math.Sqrt(num); i++)
             {
                 if (IsDivisor(i, num))
@@ -76,6 +76,19 @@ namespace Lib
                     result.Add(i);
                     if (num / i != i)
                         result.Add(num / i);
+                }
+            }
+            int count = result.Count;
+            for (int i = 0; i < count; i++)
+            {
+                long divisor = result[i];
+                if (divisor != 0 && num % divisor == 0)
+                {
+                    long negativeDivisor = -divisor;
+                    if (!result.Contains(negativeDivisor))
+                    {
+                        result.Add(negativeDivisor);
+                    }
                 }
             }
             return result;
