@@ -15,7 +15,10 @@ namespace Divisors
             {
                 int n = Convert.ToInt32(textBox1);
                 int d = Convert.ToInt32(textBox2);
-                IsDivisor(d,n);
+                if (IsDivisor(d, n))
+                    MessageBox.Show("делится");
+                else
+                    MessageBox.Show("не делится");
             }
             catch (Exception)
             {
