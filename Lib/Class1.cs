@@ -45,10 +45,10 @@ namespace Lib
         /// <param name="n">Начальное число</param>
         /// <param name="m">Конечное число</param>
         /// <returns></returns>
-        public static List<int> PrimeInRange(int n, int m)
+        public static List<long> PrimeInRange(long n, long m)
         {
-            List<int> result = new();
-            for (int number = n; number <= m; number++)
+            List <long> result = new();
+            for (long number = n; number <= m; number++)
             {
                 if (IsPrime(number))
                 {
@@ -84,19 +84,6 @@ namespace Lib
                         result.Add(num / i);
                 }
             }
-            int count = result.Count;
-            for (int i = 0; i < count; i++)
-            {
-                long divisor = result[i];
-                if (divisor != 0 && num % divisor == 0)
-                {
-                    long negativeDivisor = -divisor;
-                    if (!result.Contains(negativeDivisor))
-                    {
-                        result.Add(negativeDivisor);
-                    }
-                }
-            }
             return result;
         }
         /// <summary>
@@ -104,14 +91,9 @@ namespace Lib
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>true/false</returns>
-        public static bool IsPrime(int num)
+        public static bool IsPrime(long num)
         {
-            for (int i = 2; i < num; i++)
-            {
-                if (num % i == 0)
-                    return false;
-            }
-            return true;
+            return AllDivisors(num).Count==2;
         }
 
         // Задание с занятия
@@ -131,7 +113,7 @@ namespace Lib
             List<int> result = new();
             for (int i = start; i <= finish; i++)
             {
-                if (AllDivisors(i).Count() == 5)
+                if (AllDivisors(i).Count == 5)
                 {
                     result.Add(i);
                 }
