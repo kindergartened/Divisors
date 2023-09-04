@@ -1,4 +1,5 @@
-using Lib;
+using static Lib.Class1;
+
 namespace Divisors
 {
     internal static class Program
