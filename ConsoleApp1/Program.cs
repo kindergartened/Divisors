@@ -9,7 +9,7 @@ namespace ConsoleApp
         {
             List<int> primes = new();
             List<int> factors = new();
-            List<int> divisors = new();
+            List<long> divisors = new();
             List<int> result = new();
             int num = 16;
             int start = 12;
