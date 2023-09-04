@@ -129,8 +129,8 @@ namespace Testing
             for (int i = 0; i < 10; i++)
             {
                 Random rnd = new Random();
-                int n = rnd.Next();
-                int m = rnd.Next();
+                long n = rnd.Next();
+                long m = rnd.Next();
                 List<long> List = SieveOfEratosthenes(n,m);
                 Assert.AreEqual(List, PrimeInRange(n,m));
             }

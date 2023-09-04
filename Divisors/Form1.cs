@@ -33,7 +33,7 @@ namespace Divisors
             {
                 richTextBox1.Clear();
                 int n=Convert.ToInt32(textBox3.Text);
-                List<int> result = AllDivisors(n);
+                List<long> result = AllDivisors(n);
                 result.Sort();
                 foreach (int i in result)
                 {
@@ -69,7 +69,7 @@ namespace Divisors
                 richTextBox2.Clear();
                 int n= Convert.ToInt32(textBox5.Text);
                 int m=Convert.ToInt32(textBox6.Text);
-                List<int> result= PrimeInRange(n,m);
+                List<long> result= PrimeInRange(n,m);
                 foreach(int i in result)
                 {
                    richTextBox2.AppendText(i.ToString()+" ");
