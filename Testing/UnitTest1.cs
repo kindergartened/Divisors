@@ -85,7 +85,6 @@ namespace Testing
                         }
                     }
                 }
-                divisors.Sort(); // —ортировка делителей (необ€зательно, но удобно)
                 return divisors;
             }
 
