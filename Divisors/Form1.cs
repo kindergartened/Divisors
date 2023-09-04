@@ -16,11 +16,7 @@ namespace Divisors
             {
                 int n = Convert.ToInt32(textBox1.Text);
                 int d = Convert.ToInt32(textBox2.Text);
-                if (n == 0)
-                {
-                    MessageBox.Show("Любое число является делителем нуля");
-                }
-                else if (d == 0)
+                if (d == 0)
                 {
                     MessageBox.Show("На ноль делить нельзя!");
                 }
@@ -76,7 +72,7 @@ namespace Divisors
                 if (IsPrime(n))
                     MessageBox.Show("Является простым числом");
                 else
-                    MessageBox.Show("Не является прсотым числом");
+                    MessageBox.Show("Не является простым числом");
             }
             catch (Exception)
             {
