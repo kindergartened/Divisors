@@ -81,6 +81,20 @@ namespace Divisors
                 MessageBox.Show("Ошибка");
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<int> primes,factors;
+                int n=Convert.ToInt32(textBox9.Text);
+               
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка");
+            }
+        }
     }
 
 }

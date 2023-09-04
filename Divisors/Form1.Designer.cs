@@ -49,6 +49,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -59,14 +60,20 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -294,6 +301,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Method 4";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(266, 226);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(214, 25);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Список простых чисел";
+            // 
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(120, 254);
@@ -357,6 +374,13 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage5.Controls.Add(this.label19);
+            this.tabPage5.Controls.Add(this.label18);
+            this.tabPage5.Controls.Add(this.textBox11);
+            this.tabPage5.Controls.Add(this.textBox10);
+            this.tabPage5.Controls.Add(this.textBox9);
+            this.tabPage5.Controls.Add(this.button6);
+            this.tabPage5.Controls.Add(this.label17);
             this.tabPage5.Controls.Add(this.label9);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
@@ -390,57 +414,13 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Method 6";
             // 
-            // label10
+            // richTextBox3
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(243, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(298, 38);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "GetNumsWith3Divisors";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(266, 226);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(214, 25);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Список простых чисел";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(57, 145);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 27);
-            this.textBox7.TabIndex = 1;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(589, 145);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 27);
-            this.textBox8.TabIndex = 2;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(53, 122);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(125, 20);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "нижняя граница";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(594, 118);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(128, 20);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "верхняя граница";
+            this.richTextBox3.Location = new System.Drawing.Point(151, 244);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(437, 152);
+            this.richTextBox3.TabIndex = 6;
+            this.richTextBox3.Text = "";
             // 
             // button5
             // 
@@ -451,13 +431,105 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // richTextBox3
+            // label16
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(151, 244);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(437, 152);
-            this.richTextBox3.TabIndex = 6;
-            this.richTextBox3.Text = "";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(594, 118);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(128, 20);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "верхняя граница";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(53, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(125, 20);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "нижняя граница";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(589, 145);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(125, 27);
+            this.textBox8.TabIndex = 2;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(57, 145);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(121, 27);
+            this.textBox7.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(243, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(298, 38);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "GetNumsWith3Divisors";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(53, 83);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 20);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "число n";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(307, 143);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(132, 35);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(41, 111);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(91, 27);
+            this.textBox9.TabIndex = 3;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(41, 257);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(241, 27);
+            this.textBox10.TabIndex = 4;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(413, 255);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(330, 27);
+            this.textBox11.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(54, 223);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(112, 20);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "простые числа";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(432, 223);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(65, 20);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "степени";
             // 
             // Form1
             // 
@@ -525,5 +597,12 @@
         private Button button5;
         private Label label16;
         private Label label15;
+        private Button button6;
+        private Label label17;
+        private Label label19;
+        private Label label18;
+        private TextBox textBox11;
+        private TextBox textBox10;
+        private TextBox textBox9;
     }
 }
