@@ -9,13 +9,13 @@ namespace Lib
         /// </summary>
         /// <param name="num">Разбиваемое число</param>
         /// <returns>Два листа с целыми числами</returns>
-        public static (List<int>, List<int>) Factorization(int num)
+        public static (List<long>, List<long>) Factorization(long num)
         {
-            List<int> primes = new();
+            List<long> primes = new();
             int temp = 0;
-            List<int> factors = new();
+            List<long> factors = new();
 
-            for (int i = 2; i <= num; i++)
+            for (long i = 2; i <= num; i++)
             {
                 while (num % i == 0)
                 {
@@ -23,7 +23,6 @@ namespace Lib
                     num /= i;
                 }
             }
-            primes.Sort();
             factors.Add(1);
             for (int i = 0; i < primes.Count-1; i++)
             {
@@ -40,22 +39,39 @@ namespace Lib
             return (primes.Distinct().ToList(), factors);
         }
         /// <summary>
-        /// Возвращает лист простых чисел в диапазоне 
+        /// Возвращает лист простых чисел в диапазоне от n до m. Использует алгоритм 
+        /// "Решето Эратосфена" для поиска простых чисел и представляет их в виде списка. 
+        /// Этот алгоритм имеет сложность O(n log log n) и является эффективным для больших чисел.
         /// </summary>
         /// <param name="n">Начальное число</param>
         /// <param name="m">Конечное число</param>
         /// <returns></returns>
         public static List<long> PrimeInRange(long n, long m)
         {
-            List <long> result = new();
-            for (long number = n; number <= m; number++)
+            bool[] isPrime = new bool[m + 1];
+            List<long> primes = new List<long>();
+            for (long i = 2; i <= m; i++)
             {
-                if (IsPrime(number))
+                isPrime[i] = true;
+            }
+            for (long p = 2; p * p <= m; p++)
+            {
+                if (isPrime[p])
                 {
-                    result.Add(number);
+                    for (long i = p * p; i <= m; i += p)
+                    {
+                        isPrime[i] = false;
+                    }
                 }
             }
-            return result;
+            for (long i = Math.Max(2, n); i <= m; i++)
+            {
+                if (isPrime[i])
+                {
+                    primes.Add(i);
+                }
+            }
+            return primes;
         }
         /// <summary>
         /// Является ли число d делителем числа n
@@ -78,22 +94,33 @@ namespace Lib
             for (int i = 1; i <= Math.Sqrt(num); i++)
             {
                 if (IsDivisor(i, num))
-                { 
+                {
                     result.Add(i);
                     if (num / i != i)
                         result.Add(num / i);
-                }
+            }
             }
             return result;
         }
         /// <summary>
-        /// Проверяет, является ли число простым
+        /// Проверяет, является ли число простым. Проверяет только делители до квадратного корня из числа
         /// </summary>
         /// <param name="num">Число</param>
         /// <returns>true/false</returns>
-        public static bool IsPrime(long num)
+        public static bool IsPrime(long n)
         {
-            return AllDivisors(num).Count==2;
+            if (n <= 1) return false;
+            if (n <= 3) return true;
+
+            if (n % 2 == 0 || n % 3 == 0) return false;
+
+            for (long i = 5; i * i <= n; i += 6)
+            {
+                if (n % i == 0 || n % (i + 2) == 0)
+                    return false;
+            }
+
+            return true;
         }
 
         // Задание с занятия
@@ -105,13 +132,13 @@ namespace Lib
         /// <summary>
         /// Метод, возвращающий лист чисел, имеющих ровно 3 делителя за исключением 1 и самого себя.
         /// </summary>
-        /// <param name="start">Начало диапозона</param>
-        /// <param name="finish">Конец диапозона</param>
+        /// <param name="start">Начало диапазона</param>
+        /// <param name="finish">Конец диапазона</param>
         /// <returns>Лист целых чисел</returns>
-        public static List<int> GetNumsWith3Divisors(int start, int finish)
+        public static List<long> GetNumsWith3Divisors(long start, long finish)
         {
-            List<int> result = new();
-            for (int i = start; i <= finish; i++)
+            List<long> result = new();
+            for (long i = start; i <= finish; i++)
             {
                 if (AllDivisors(i).Count == 5)
                 {

@@ -71,20 +71,6 @@ namespace Testing
                         }
                     }
                 }
-
-                int count = divisors.Count;
-                for (int i = 0; i < count; i++)
-                {
-                    long divisor = divisors[i];
-                    if (divisor != 0 && number % divisor == 0)
-                    {
-                        long negativeDivisor = -divisor;
-                        if (!divisors.Contains(negativeDivisor))
-                        {
-                            divisors.Add(negativeDivisor);
-                        }
-                    }
-                }
                 return divisors;
             }
 
@@ -100,25 +86,30 @@ namespace Testing
         [Test]
         public void PrimeInRangeTest()
         {
-            static List<long> SieveOfEratosthenes(long n, long m)
+            static List<long> FindPrimesInRange(long n, long m)
             {
+                bool[] isPrime = new bool[m + 1];
                 List<long> primes = new List<long>();
-                bool[] isPrime = new bool[(m - n + 1)];
 
-                for (long i = 2; i * i <= m; i++)
+                for (long i = 2; i <= m; i++)
                 {
-                    if (!isPrime[i - n])
+                    isPrime[i] = true;
+                }
+
+                for (long p = 2; p * p <= m; p++)
+                {
+                    if (isPrime[p])
                     {
-                        for (long j = Math.Max(i * i, ((n + i - 1) / i) * i); j <= m; j += i)
+                        for (long i = p * p; i <= m; i += p)
                         {
-                            isPrime[j - n] = true;
+                            isPrime[i] = false;
                         }
                     }
                 }
 
                 for (long i = Math.Max(2, n); i <= m; i++)
                 {
-                    if (!isPrime[i - n])
+                    if (isPrime[i])
                     {
                         primes.Add(i);
                     }
@@ -126,12 +117,13 @@ namespace Testing
 
                 return primes;
             }
+
             for (int i = 0; i < 10; i++)
             {
                 Random rnd = new Random();
-                long n = rnd.Next();
-                long m = rnd.Next();
-                List<long> List = SieveOfEratosthenes(n,m);
+                long n = rnd.Next(1, 100000);
+                long m = rnd.Next(1, 100000);
+                List<long> List = FindPrimesInRange(n,m);
                 Assert.AreEqual(List, PrimeInRange(n,m));
             }
 

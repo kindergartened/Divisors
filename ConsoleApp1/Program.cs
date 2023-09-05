@@ -7,13 +7,13 @@ namespace ConsoleApp
     {
         public static void Main()
         {
-            List<int> primes = new();
-            List<int> factors = new();
+            List<long> primes = new();
+            List<long> factors = new();
             List<long> divisors = new();
-            List<int> result = new();
-            int num = 16;
-            int start = 12;
-            int finish = 144;
+            List<long> result = new();
+            long num = 16;
+            long start = 12;
+            long finish = 144;
             result = GetNumsWith3Divisors(start,finish); 
             (primes, factors) = Factorization(num);
             divisors = AllDivisors(num);

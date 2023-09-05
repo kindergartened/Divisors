@@ -14,8 +14,8 @@ namespace Divisors
         {
             try
             {
-                int n = Convert.ToInt32(textBox1.Text);
-                int d = Convert.ToInt32(textBox2.Text);
+                long n = Convert.ToInt64(textBox1.Text);
+                long d = Convert.ToInt64(textBox2.Text);
                 if (d == 0)
                 {
                     MessageBox.Show("На ноль делить нельзя!");
@@ -39,7 +39,7 @@ namespace Divisors
             try
             {
                 richTextBox1.Clear();
-                int n=Convert.ToInt32(textBox3.Text);
+                long n = Convert.ToInt64(textBox3.Text);
                 if (n == 0)
                 {
                     richTextBox1.Text = "Делителем нуля являются все числа";
@@ -52,7 +52,7 @@ namespace Divisors
                 {
                     List<long> result = AllDivisors(n);
                     result.Sort();
-                    foreach (int i in result)
+                    foreach (long i in result)
                     {
                         richTextBox1.AppendText(i.ToString() + " ");
                     }
@@ -68,7 +68,7 @@ namespace Divisors
         {
             try
             {
-                int n = Convert.ToInt32(textBox4.Text);
+                long n = Convert.ToInt64(textBox4.Text);
                 if (IsPrime(n))
                     MessageBox.Show("Является простым числом");
                 else
@@ -86,8 +86,8 @@ namespace Divisors
             {
                 richTextBox2.Clear();
 
-                int n= Convert.ToInt32(textBox5.Text);
-                int m=Convert.ToInt32(textBox6.Text);
+                long n= Convert.ToInt64(textBox5.Text);
+                long m=Convert.ToInt64(textBox6.Text);
                 if (n > m)
                 {
                     MessageBox.Show("Число нижней границы доолжно быть < числа верхней границы");
@@ -99,7 +99,7 @@ namespace Divisors
                 else
                 {
                     List<long> result = PrimeInRange(n, m);
-                    foreach (int i in result)
+                    foreach (long i in result)
                     {
                         richTextBox2.AppendText(i.ToString() + " ");
                     }
@@ -118,8 +118,8 @@ namespace Divisors
             {
                 textBox10.Clear();
                 textBox11.Clear();
-                List<int> primes, factors;
-                int n = Convert.ToInt32(textBox9.Text);
+                List<long> primes, factors;
+                long n = Convert.ToInt64(textBox9.Text);
                 if (n <= 0)
                 {
                     MessageBox.Show("Данное число невозможно разделить на простые множители. Пожалуйста, введите положительное число");
@@ -127,11 +127,11 @@ namespace Divisors
                 else
                 {
                     (primes, factors) = Factorization(n);
-                    foreach (int i in primes)
+                    foreach (long i in primes)
                     {
                         textBox10.AppendText(i.ToString() + " ");
                     }
-                    foreach (int i in factors)
+                    foreach (long i in factors)
                     {
                         textBox11.AppendText(i.ToString() + " ");
                     }
@@ -148,9 +148,9 @@ namespace Divisors
             try
             {
                 richTextBox3.Clear();
-                int start = Convert.ToInt32(textBox7.Text);
-                int finish = Convert.ToInt32(textBox8.Text);
-                List<int> result;
+                long start = Convert.ToInt64(textBox7.Text);
+                long finish = Convert.ToInt64(textBox8.Text);
+                List<long> result;
                 if (start > finish)
                 {
                     MessageBox.Show("Нижняя граница должна быть < верхней границы");
@@ -162,7 +162,7 @@ namespace Divisors
                 else
                 {
                     result = GetNumsWith3Divisors(start, finish);
-                    foreach (int i in result)
+                    foreach (long i in result)
                     {
                         richTextBox3.AppendText(i.ToString() + " ");
                     }
