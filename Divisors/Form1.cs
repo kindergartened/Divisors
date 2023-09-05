@@ -16,25 +16,21 @@ namespace Divisors
             {
                 int n = Convert.ToInt32(textBox1.Text);
                 int d = Convert.ToInt32(textBox2.Text);
-                if (n == 0)
+                if (d == 0)
                 {
-                    MessageBox.Show("Ó íóëÿ áåñêîíå÷íîå ÷èñëî äåëèòåëåé!");
-                }
-                else if (d == 0)
-                {
-                    MessageBox.Show("Íà íîëü äåëèòü íåëüçÿ!");
+                    MessageBox.Show("На ноль делить нельзя!");
                 }
                 else
                 {
                     if (IsDivisor(d, n))
-                        MessageBox.Show($"×èñëî {d} ÿâëÿåòñÿ äåëèòåëåì ÷èñëà {n}");
+                        MessageBox.Show($"Число {d} является делителем числа {n}");
                     else
-                        MessageBox.Show($"×èñëî {d} íå ÿâëÿåòñÿ äåëèòåëåì ÷èñëà {n}");
+                        MessageBox.Show($"Число {d} не является делителем числа {n}");
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Ïîæàëóéñòà, ââåäèòå ÷èñëî!");
+                MessageBox.Show("Пожалуйста, введите число!");
             }
         }
 
@@ -46,11 +42,11 @@ namespace Divisors
                 int n=Convert.ToInt32(textBox3.Text);
                 if (n == 0)
                 {
-                    richTextBox1.Text = "Äåëèòåëåì íóëÿ ÿâëÿþòñÿ âñå ÷èñëà";
+                    richTextBox1.Text = "Делителем нуля являются все числа";
                 }
                 else if (n < 0)
                 {
-                    MessageBox.Show("Ââåäèòå ïîëîæèòåëüíîå ÷èñëî!");
+                    MessageBox.Show("Введите положительное число!");
                 }
                 else
                 {
@@ -64,7 +60,7 @@ namespace Divisors
             }
             catch (Exception)
             {
-                MessageBox.Show("Ïîæàëóéñòà, ââåäèòå ÷èñëî!");
+                MessageBox.Show("Пожалуйста, введите число!");
             }
         }
 
@@ -74,13 +70,13 @@ namespace Divisors
             {
                 int n = Convert.ToInt32(textBox4.Text);
                 if (IsPrime(n))
-                    MessageBox.Show("×èñëî ïðîñòîå");
+                    MessageBox.Show("Является простым числом");
                 else
-                    MessageBox.Show("×èñëî íå ÿâëÿåòñÿ ïðîñòûì");
+                    MessageBox.Show("Не является простым числом");
             }
             catch (Exception)
             {
-                MessageBox.Show("Ïîæàëóéñòà, ââåäèòå ÷èñëî!");
+                MessageBox.Show("Пожалуйста, введите число!");
             }
         }
 
@@ -94,15 +90,15 @@ namespace Divisors
                 int m=Convert.ToInt32(textBox6.Text);
                 if (n > m)
                 {
-                    MessageBox.Show("×èñëî íèæíåé ãðàíèöû äîëæíî áûòü < ÷èñëà âåðõíåé ãðàíèöû");
+                    MessageBox.Show("Число нижней границы доолжно быть < числа верхней границы");
                 }
                 else if (n < 0)
                 {
-                    MessageBox.Show("Ãðàíèöû äîëæíû áûòü ïîëîæèòåëüíûìè");
+                    MessageBox.Show("Границы должны быть положительными");
                 }
                 else
                 {
-                    List<int> result = PrimeInRange(n, m);
+                    List<long> result = PrimeInRange(n, m);
                     foreach (int i in result)
                     {
                         richTextBox2.AppendText(i.ToString() + " ");
@@ -112,7 +108,7 @@ namespace Divisors
             }
             catch (Exception)
             {
-                MessageBox.Show("Ïîæàëóéñòà, ââåäèòå ÷èñëî!");
+                MessageBox.Show("Пожалуйста, введите число!");
             }
         }
 
@@ -126,7 +122,7 @@ namespace Divisors
                 int n = Convert.ToInt32(textBox9.Text);
                 if (n <= 0)
                 {
-                    MessageBox.Show("Äàííîå ÷èñëî íåâîçìîæíî ðàçáèòü íà ìíîæèòåëè ïðîñòûõ ÷èñåë. Ïîæàëóéñòà, ââåäèòå ïîëîæèòåëüíîå ÷èñëî");
+                    MessageBox.Show("Данное число невозможно разделить на простые множители. Пожалуйста, введите положительное число");
                 }
                 else
                 {
@@ -143,7 +139,7 @@ namespace Divisors
             }
             catch (Exception)
             {
-                MessageBox.Show("Ïîæàëóéñòà, ââåäèòå ÷èñëî!");
+                MessageBox.Show("Пожалуйста, введите число!");
             }
         }
 
@@ -157,11 +153,11 @@ namespace Divisors
                 List<int> result;
                 if (start > finish)
                 {
-                    MessageBox.Show("×èñëî íèæíåé ãðàíèöû äîëæíî áûòü < ÷èñëà âåðõíåé ãðàíèöû");
+                    MessageBox.Show("Нижняя граница должна быть < верхней границы");
                 }
                 else if (start <= 0)
                 {
-                    MessageBox.Show("Ãðàíèöû äîëæíû áûòü ïîëîæèòåëüíûìè ÷èñëàìè");
+                    MessageBox.Show("Границы должны быть положительными");
                 }
                 else
                 {
@@ -174,7 +170,7 @@ namespace Divisors
             }
             catch (Exception)
             {
-                MessageBox.Show("Ïîæàëóéñòà, ââåäèòå ÷èñëî!");
+                MessageBox.Show("Пожалуйста, введите число!");
             }
         }
     }
