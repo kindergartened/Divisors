@@ -20,7 +20,7 @@ namespace Divisors
                 {
                     MessageBox.Show("На ноль делить нельзя!");
                 }
-                else if ((d < 1 && d <= long.MaxValue) || (n < 1 && n <= long.MaxValue))
+                else if ((d < 1 && d > long.MaxValue) || (n < 1 && n > long.MaxValue))
                 {
                     MessageBox.Show("Недопустимое число! Введите числа >= 1!");
                 }
