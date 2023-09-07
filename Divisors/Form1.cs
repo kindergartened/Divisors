@@ -20,6 +20,10 @@ namespace Divisors
                 {
                     MessageBox.Show("На ноль делить нельзя!");
                 }
+                else if (d < 1 || n < 1)
+                {
+                    MessageBox.Show("Недопустимое число! Введите числа >= 1!");
+                }
                 else
                 {
                     if (IsDivisor(d, n))
