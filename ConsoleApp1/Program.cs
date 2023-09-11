@@ -12,8 +12,8 @@ namespace ConsoleApp
             List<long> divisors = new();
             List<long> result = new();
             long num = 16;
-            long start = 12;
-            long finish = 144;
+            long start = 1;
+            long finish = 100000000000000;
             result = GetNumsWith3Divisors(start,finish); 
             (primes, factors) = Factorization(num);
             divisors = AllDivisors(num);

@@ -140,9 +140,12 @@ namespace Lib
             List<long> result = new();
             for (long i = start; i <= finish; i++)
             {
-                if (AllDivisors(i).Count == 5)
+                if (Math.Sqrt(i)%1==0)
                 {
-                    result.Add(i);
+                    if (AllDivisors(i).Count == 5)
+                    {
+                        result.Add(i);
+                    }
                 }
             }
             return result;
