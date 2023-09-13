@@ -73,6 +73,11 @@ namespace Divisors
             try
             {
                 long n = Convert.ToInt64(textBox4.Text);
+                if (n < 0)
+                {
+                    MessageBox.Show("Введите положительное число!");
+                }
+                else
                 if (IsPrime(n))
                     MessageBox.Show("Является простым числом");
                 else
